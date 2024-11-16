@@ -1,0 +1,25 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tugas Penting"
+        android:textSize="24sp"
+        android:textColor="@color/tosca"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <ListView
+        android:id="@+id/lv_important_tasks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/tosca"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To-Do List"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textColor="@color/tosca" />
+
+    <Button
+        android:id="@+id/btn_add_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Tugas"
+        android:backgroundTint="@color/tosca"
+        android:textColor="@color/teal_700" />
+
+    <Button
+        android:id="@+id/btn_view_tasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lihat Semua Tugas"
+        android:backgroundTint="@color/tosca"
+        android:textColor="@color/teal_700"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btn_view_important_tasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tugas Penting"
+        android:backgroundTint="@color/tosca"
+        android:textColor="@color/teal_700"
+        android:layout_marginTop="8dp" />
+</LinearLayout>
