@@ -53,11 +53,32 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     @SuppressLint("Range")
+    fun getAllTasks(): List<Map<String, String>> {
+        val tasks = mutableListOf<Map<String, String>>()
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_TASK", null)
+
+        if (cursor.moveToFirst()) {
+            do {
+                tasks.add(
+                    mapOf(
+                        COLUMN_ID to cursor.getString(cursor.getColumnIndex(COLUMN_ID)),
+                        COLUMN_TITLE to cursor.getString(cursor.getColumnIndex(COLUMN_TITLE)),
+                        COLUMN_DESCRIPTION to cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPTION)),
+                        COLUMN_PRIORITY to cursor.getString(cursor.getColumnIndex(COLUMN_PRIORITY))
+                    )
+                )
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return tasks
+    }
+    @SuppressLint("Range")
     fun getImportantTasks(): ArrayList<Task> {
         val importantTasks = ArrayList<Task>()
         val db = this.readableDatabase
         val cursor = db.rawQuery(
-            "SELECT * FROM $TABLE_TASK WHERE $COLUMN_PRIORITY = 'Penting'",
+            "SELECT * FROM $TABLE_TASK WHERE $COLUMN_PRIORITY = 'High'",
             null
         )
 
@@ -87,5 +108,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db.update(TABLE_TASK, values, "$COLUMN_ID=?", arrayOf(taskId.toString()))
         db.close()
     }
+
 
 }

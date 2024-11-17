@@ -4,9 +4,6 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.todolist.DatabaseHelper
-import com.example.todolist.R
-import com.example.todolist.R.id.editTextTitle
 
 class AddTaskActivity : AppCompatActivity() {
 
@@ -17,10 +14,10 @@ class AddTaskActivity : AppCompatActivity() {
 
         val db = DatabaseHelper(this)
 
-        val editTextTitle = findViewById<EditText>(editTextTitle)
-        val editTextDescription = findViewById<EditText>(R.id.editTextDescription)
-        val spinnerPriority = findViewById<Spinner>(R.id.spinnerPriority)
-        val buttonSave = findViewById<Button>(R.id.buttonSaveTask)
+        val editTextTitle = findViewById<EditText>(R.id.et_task_title)
+        val editTextDescription = findViewById<EditText>(R.id.et_task_description)
+        val spinnerPriority = findViewById<Spinner>(R.id.sp_task_priority)
+        val buttonSave = findViewById<Button>(R.id.btn_save_task)
 
         buttonSave.setOnClickListener {
             val title = editTextTitle.text.toString()
@@ -38,3 +35,4 @@ class AddTaskActivity : AppCompatActivity() {
         }
     }
 }
+

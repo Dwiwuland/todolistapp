@@ -15,9 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Inisialisasi tombol di halaman Home
-        val btnAddTask = findViewById<Button>(R.id.btnAddTask)
-        val btnViewTasks = findViewById<Button>(R.id.btnViewTasks)
-        val btnImportantTasks = findViewById<Button>(R.id.btnImportantTasks)
+        val btnAddTask = findViewById<Button>(R.id.btn_add_task)
+        val btnViewTasks = findViewById<Button>(R.id.btn_view_tasks)
+        val btnImportantTasks = findViewById<Button>(R.id.btn_view_important_tasks)
+
 
         // Navigasi ke halaman AddTaskActivity
         btnAddTask.setOnClickListener {
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ImportantTasksActivity::class.java)
             startActivity(intent)
         }
-
+    }
     }
 
-}
+
