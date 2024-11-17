@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="editTextTitle" type="id">editTextTitle</item>
-    <item name="editTextDescription" type="id">editTextDescription</item>
-    <item name="spinnerPriority" type="id">sinnerPriority</item>
-    <item name="buttonSaveTask" type="id">buttonSaveTask</item>
-</resources>
